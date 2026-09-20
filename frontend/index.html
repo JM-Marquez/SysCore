@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysCore</title>
+
+     <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <!--Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header class="app-header">
+
+    <div class="header-left">
+    <i class="bi bi-cpu-fill"></i>
+    <h1 class="logo-title">SysCore</h1>
+</div>
+
+    <div class="header-right">
+
+    <div class="search-container">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Buscar..." aria-label="Buscar">
+    </div>
+
+    <button class="profile-button" aria-label="Perfil de usuario">
+        <i class="bi bi-person-circle"></i>
+    </button>
+
+</div>
+
+</header>
+
+     <div class="app-container">
+
+    <aside class="sidebar">
+
+
+   
+
+    <nav class="sidebar-nav">
+
+        <ul class="nav-list">
+
+            <li class="active">
+
+    <a href="#dashboard">
+
+        <i class="bi bi-speedometer2"></i>
+
+        <span>Dashboard</span>
+
+    </a>
+
+</li>
+
+            <li>
+                <a href="#users">
+
+                    <i class="bi bi-people-fill"></i>
+                    
+                    <span>Usuarios</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#servers">
+
+                    <i class="bi bi-hdd-network-fill"></i>
+
+                    <span>Servidores</span>
+                </a>
+            </li>
+
+            <li>
+               <a href="#pcs">
+
+                   <i class="bi bi-pc-display"></i>
+
+                   <span>PCs</span>
+              </a>
+            </li>
+
+
+            <li>
+                <a href="#logs">
+                    
+                    <i class="bi bi-file-earmark-text"></i>
+
+                    <span>Logs</span>
+                </a>
+            </li>
+<li>
+    <a href="#alerts">
+
+        <i class="bi bi-exclamation-triangle-fill"></i>
+
+        <span>Alertas</span>
+
+    </a>
+</li>
+
+
+        </ul>
+
+    </nav>
+
+
+    <div class="sidebar-footer">
+
+        <span>
+            v0.1
+        </span>
+
+    </div>
+
+
+</aside>
+
+    <main class="main-content">
+
+
+        <section id="dashboard" class="panel active">
+
+    <header class="section-header">
+        <h2>Dashboard</h2>
+    </header>
+
+    <div class="dashboard-cards">
+
+        <article class="status-card">
+
+            <div class="card-icon">
+                <i class="bi bi-people-fill"></i>
+            </div>
+
+            <div class="card-content">
+
+                <span class="card-title">Usuarios</span>
+
+                <h3 id="users-value" class="card-value"></h3>
+
+                <small class="card-info">
+                    Total usuarios
+                </small>
+
+            </div>
+
+        </article>
+
+        <article class="status-card">
+
+            <div class="card-icon">
+                <i class="bi bi-hdd-network-fill"></i>
+            </div>
+
+            <div class="card-content">
+
+                <span class="card-title">Servidores</span>
+
+                <h3 id="servers-value" class="card-value"></h3>
+
+                <small class="card-info">
+                    Servidores monitorizados
+                </small>
+
+            </div>
+
+        </article>
+
+        <article class="status-card">
+
+            <div class="card-icon">
+                <i class="bi bi-pc-display"></i>
+            </div>
+
+            <div class="card-content">
+
+                <span class="card-title">PCs</span>
+
+                <h3 id="pcs-value" class="card-value"></h3>
+
+                <small class="card-info">
+                    PCs monitorizados
+                </small>
+
+            </div>
+
+        </article>
+
+        <article class="status-card">
+
+            <div class="card-icon">
+                <i class="bi bi-file-earmark-text"></i>
+            </div>
+
+            <div class="card-content">
+
+                <span class="card-title">Logs</span>
+
+                <h3 id="logs-value" class="card-value"></h3>
+
+                <small class="card-info">
+                    Eventos del sistema
+                </small>
+
+            </div>
+
+        </article>
+
+        <article class="status-card">
+
+    <div class="card-icon">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+    </div>
+
+    <div class="card-content">
+
+        <span class="card-title">Alertas</span>
+
+        <h3 id="alerts-value" class="card-value"></h3>
+
+        <small class="card-info">
+            Alertas activas
+        </small>
+
+    </div>
+
+</article>
+
+        <article class="status-card">
+
+            <div class="card-icon">
+                <i class="bi bi-check-circle-fill"></i>
+            </div>
+
+            <div class="card-content">
+
+                <span class="card-title">Estado</span>
+
+                <h3 id="status-value" class="card-value success"></h3>
+
+                <small class="card-info">
+                    Monitorización en tiempo real
+                </small>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    <h3>Últimos eventos</h3>
+
+    <div class="table-container">
+
+        <table class="data-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Servidor</th>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Mensaje</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="dashboardLogs">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+    <section id="users" class="panel">
+
+    <header class="section-header">
+        <h2>Usuarios</h2>
+    </header>
+
+    <div class="toolbar">
+
+        <div class="search-container">
+
+            <i class="bi bi-search"></i>
+
+            <input
+                type="text"
+                placeholder="Buscar usuario..."
+                aria-label="Buscar usuario">
+
+        </div>
+
+        <button class="btn-primary">
+
+            <i class="bi bi-plus-lg"></i>
+
+            Nuevo usuario
+
+        </button>
+
+    </div>
+
+    <div class="table-container">
+
+        <table class="data-table">
+
+    <thead>
+
+        <tr>
+
+            <th>Nombre</th>
+
+            <th>Rol</th>
+
+            <th>Estado</th>
+
+            <th>Último acceso</th>
+
+            <th>Acciones</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+<tr>
+
+<td colspan="5" class="table-empty">
+
+No hay usuarios registrados.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+
+</div>
+
+</section>
+
+ <section id="servers" class="panel">
+
+        <header class="section-header">
+            <h2>Servidores</h2>
+        </header>
+
+        <div class="toolbar">
+
+            <div class="search-container">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="text"
+                    placeholder="Buscar servidor..."
+                    aria-label="Buscar servidor">
+
+            </div>
+
+            <button class="btn-primary">
+
+                <i class="bi bi-plus-lg"></i>
+
+                Nuevo servidor
+
+            </button>
+
+        </div>
+
+        <div class="table-container">
+
+            <table class="data-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Servidor</th>
+                        <th>IP</th>
+                        <th>Estado</th>
+                        <th>CPU</th>
+                        <th>RAM</th>
+                        <th>Acciones</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td colspan="6" class="table-empty">
+
+                            No hay servidores registrados.
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- =======================
+         Logs
+    ======================== -->
+
+    <section id="logs" class="panel">
+
+    <header class="section-header">
+        <h2>Logs</h2>
+    </header>
+
+    <div class="toolbar">
+
+        <div class="search-container">
+
+            <i class="bi bi-search"></i>
+
+            <input
+                type="text"
+                id="searchLogs"
+                placeholder="Buscar log...">
+
+        </div>
+
+        <select id="filterLogs">
+
+            <option value="">Todos</option>
+            <option value="INFO">INFO</option>
+            <option value="WARNING">WARNING</option>
+            <option value="ERROR">ERROR</option>
+
+        </select>
+
+    </div>
+
+    <div class="table-container">
+
+        <table class="data-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Servidor</th>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Mensaje</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="logsTableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<section id="alerts" class="panel">
+
+    <header class="section-header">
+        <h2>Alertas</h2>
+    </header>
+
+    <div class="toolbar">
+
+        <div class="search-container">
+
+            <i class="bi bi-search"></i>
+
+            <input
+                type="text"
+                id="searchAlerts"
+                placeholder="Buscar alerta...">
+
+        </div>
+
+        <select id="filterAlerts">
+
+            <option value="">Todas</option>
+            <option value="WARNING">Advertencias</option>
+            <option value="ERROR">Críticas</option>
+            <option value="activa">Activas</option>
+            <option value="resuelta">Resueltas</option>
+
+        </select>
+
+    </div>
+
+    <div class="table-container">
+
+        <table class="data-table">
+
+            <thead>
+
+                <tr>
+                    <th>Servidor</th>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Nivel</th>
+                    <th>Mensaje</th>
+                    <th>Estado</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="alertsTableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<section id="pcs" class="panel">
+    <header class="section-header">
+        <h2>PCs</h2>
+    </header>
+
+    <div class="toolbar">
+        <div class="search-container">
+            <i class="bi bi-search"></i>
+            <input type="text" id="searchPcs" placeholder="Buscar PC...">
+        </div>
+        <button class="btn-primary" id="openPcModal">
+            <i class="bi bi-plus-lg"></i>
+            Nuevo PC
+        </button>
+    </div>
+
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>IP</th>
+                    <th>Sistema operativo</th>
+                    <th>CPU</th>
+                    <th>RAM</th>
+                    <th>Usuario</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="pcsTableBody"></tbody>
+        </table>
+    </div>
+</section>
+
+
+    </main>
+
+</div>
+
+
+<div id="userModal" class="modal hidden">
+    <div class="modal-content">
+
+        <h2 id="userModalTitle">Nuevo usuario</h2>
+
+        <form id="userForm">
+
+            <label>Nombre</label>
+            <input type="text" id="nombre">
+
+            <label>Email</label>
+            <input type="email" id="email">
+
+            <label>Rol</label>
+            <select id="rol">
+                <option value="1">Administrador</option>
+                <option value="2">Técnico</option>
+                <option value="3">Invitado</option>
+            </select>
+
+            <label>Estado</label>
+            <select id="estado">
+                <option value="Activo">Activo</option>
+                <option value="Inactivo">Inactivo</option>
+            </select>
+
+            <div class="modal-buttons">
+
+                <button type="button" id="cancelUser">Cancelar</button>
+
+                <button type="submit" id="saveUser">Guardar</button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div id="serverModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <h2 id="serverModalTitle">Nuevo servidor</h2>
+
+        <form id="serverForm">
+
+            <label>Nombre</label>
+            <input type="text" id="serverNombre">
+
+            <label>IP</label>
+            <input type="text" id="serverIp">
+
+            <label>Sistema operativo</label>
+            <input type="text" id="serverSO">
+
+            <label>CPU (%)</label>
+            <input type="number" id="serverCpu">
+
+            <label>RAM (%)</label>
+            <input type="number" id="serverRam">
+
+            <label>Disco (%)</label>
+            <input type="number" id="serverDisco">
+
+            <label>Estado</label>
+            <select id="serverEstado">
+
+                <option value="Activo">Activo</option>
+
+                <option value="Mantenimiento">Mantenimiento</option>
+
+                <option value="Inactivo">Inactivo</option>
+
+            </select>
+
+            <div class="modal-buttons">
+
+                <button type="button" id="cancelServer">
+                    Cancelar
+                </button>
+
+                <button type="submit" id="saveServer">
+                    Guardar
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div id="serverMetricsModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <h2 id="metricsServerTitle">Histórico del servidor</h2>
+
+        <div class="server-metrics-info">
+            <p>
+                <strong>Estado:</strong>
+                <span id="metricsServerStatus">-</span>
+            </p>
+
+            <p>
+                <strong>IP:</strong>
+                <span id="metricsServerIp">-</span>
+            </p>
+        </div>
+
+        <div class="chart-container">
+            <h3>CPU</h3>
+            <canvas id="cpuChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>RAM</h3>
+            <canvas id="ramChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>Disco</h3>
+            <canvas id="diskChart"></canvas>
+        </div>
+
+        <div class="modal-buttons">
+
+            <button type="button" id="closeMetricsModal">
+                Cerrar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL PC -->
+
+<div id="pcModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <h2 id="pcModalTitle">
+            Nuevo PC
+        </h2>
+
+
+        <form id="pcForm">
+
+            <label>Nombre</label>
+
+            <input
+                type="text"
+                id="pcNombre"
+            >
+
+
+            <label>IP</label>
+
+            <input
+                type="text"
+                id="pcIp"
+            >
+
+
+            <label>Sistema operativo</label>
+
+            <input
+                type="text"
+                id="pcSO"
+            >
+
+
+            <label>CPU (%)</label>
+
+            <input
+                type="number"
+                id="pcCpu"
+                min="0"
+                max="100"
+            >
+
+
+            <label>RAM (%)</label>
+
+            <input
+                type="number"
+                id="pcRam"
+                min="0"
+                max="100"
+            >
+
+
+            <label>Disco (%)</label>
+
+            <input
+                type="number"
+                id="pcDisco"
+                min="0"
+                max="100"
+            >
+
+            <div class="form-group">
+    <label for="pcUsuario">Usuario asignado:</label>
+    <select id="pcUsuario" class="form-control">
+        <option value="">-- Sin usuario asignado --</option>
+        <!-- Las opciones de los usuarios se cargarán dinámicamente desde JavaScript -->
+    </select>
+</div>
+
+
+            <label>Estado</label>
+
+            <select id="pcEstado">
+
+                <option value="Activo">
+                    Activo
+                </option>
+
+                <option value="Mantenimiento">
+                    Mantenimiento
+                </option>
+
+                <option value="Inactivo">
+                    Inactivo
+                </option>
+
+            </select>
+
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    id="cancelPc">
+                    Cancelar
+                </button>
+
+
+                <button
+                    type="submit"
+                    id="savePc">
+                    Crear PC
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+    <script type="module" src="./js/app.js"></script>
+    
+</body>
+</html>
