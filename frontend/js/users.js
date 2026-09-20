@@ -181,7 +181,7 @@ export function initUsersModal() {
 
         nombre,
         email,
-        password: "1234",
+        password: "xxxx",
         id_rol: document.getElementById("rol").value,
         estado: document.getElementById("estado").value
 
