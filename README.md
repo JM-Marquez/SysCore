@@ -190,8 +190,6 @@ User: postgres
 La contraseña debe configurarse localmente.
 
 
-=======
-
 ## ▶️ Ejecutar el backend
 
 Entrar en:
