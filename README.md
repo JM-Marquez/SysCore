@@ -189,11 +189,8 @@ User: postgres
 
 La contraseña debe configurarse localmente.
 
-<<<<<<< HEAD
 
 =======
->>>>>>> d9dadbb (Syscore v2)
----
 
 ## ▶️ Ejecutar el backend
 
