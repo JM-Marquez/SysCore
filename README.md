@@ -415,8 +415,6 @@ ERROR
 
 ![SysCore Agent](docs/screenshots/Agente.png)
 
-> Si alguna captura todavía no está disponible, puede eliminarse temporalmente su referencia del README.
-
 ---
 
 ## 🔐 Seguridad
