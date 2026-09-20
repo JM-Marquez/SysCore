@@ -22,7 +22,11 @@ La plataforma recopila métricas de los equipos monitorizados, registra eventos 
 * 📈 Monitorización de CPU
 * 🧠 Monitorización de RAM
 * 💽 Monitorización de disco
+<<<<<<< HEAD
 * 📊 Visualización de Métricas del Sistema   
+=======
+* 📊 Visualización de Métricas del Sistema  
+>>>>>>> d9dadbb (Syscore v2)
 * 🚨 Sistema de alertas
 * 📋 Registro y consulta de logs
 * 🤖 Agente de monitorización para Linux
@@ -189,7 +193,10 @@ User: postgres
 
 La contraseña debe configurarse localmente.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d9dadbb (Syscore v2)
 ---
 
 ## ▶️ Ejecutar el backend
@@ -403,6 +410,10 @@ ERROR
 ### PCs
 
 ![Logs](docs/screenshots/PCs.png)
+
+### Gráficas de monitorización
+
+![Logs](docs/screenshots/Graficas.png)
 
 ### Agente Linux
 
