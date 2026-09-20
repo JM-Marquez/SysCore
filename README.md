@@ -22,6 +22,7 @@ La plataforma recopila métricas de los equipos monitorizados, registra eventos 
 * 📈 Monitorización de CPU
 * 🧠 Monitorización de RAM
 * 💽 Monitorización de disco
+* 📊 Visualización de Métricas del Sistema   
 * 🚨 Sistema de alertas
 * 📋 Registro y consulta de logs
 * 🤖 Agente de monitorización para Linux
@@ -188,31 +189,6 @@ User: postgres
 
 La contraseña debe configurarse localmente.
 
-Por seguridad, el archivo:
-
-```text
-backend/config/database.js
-```
-
-no forma parte del repositorio público.
-
-Se incluye:
-
-```text
-backend/config/database.example.js
-```
-
-como plantilla de configuración.
-
-Para utilizarlo:
-
-```text
-database.example.js
-        ↓
-database.js
-```
-
-y establecer las credenciales correspondientes al entorno local.
 
 ---
 
