@@ -406,23 +406,31 @@ ERROR
 
 ### Dashboard
 
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](docs/screenshots/Dashboard.png)
+
+### Usuarios
+
+![Servidores](docs/screenshots/Usuarios.png)
 
 ### Servidores
 
-![Servidores](docs/screenshots/servers.png)
+![Servidores](docs/screenshots/Servidores.png)
 
 ### Alertas
 
-![Alertas](docs/screenshots/alerts.png)
+![Alertas](docs/screenshots/Alertas.png)
 
 ### Logs
 
-![Logs](docs/screenshots/logs.png)
+![Logs](docs/screenshots/Logs.png)
+
+### PCs
+
+![Logs](docs/screenshots/PCs.png)
 
 ### Agente Linux
 
-![SysCore Agent](docs/screenshots/agent.png)
+![SysCore Agent](docs/screenshots/Agente.png)
 
 > Si alguna captura todavía no está disponible, puede eliminarse temporalmente su referencia del README.
 
