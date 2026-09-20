@@ -22,11 +22,7 @@ La plataforma recopila métricas de los equipos monitorizados, registra eventos 
 * 📈 Monitorización de CPU
 * 🧠 Monitorización de RAM
 * 💽 Monitorización de disco
-<<<<<<< HEAD
-* 📊 Visualización de Métricas del Sistema   
-=======
-* 📊 Visualización de Métricas del Sistema  
->>>>>>> d9dadbb (Syscore v2)
+* 📊 Visualización de Métricas del Sistema
 * 🚨 Sistema de alertas
 * 📋 Registro y consulta de logs
 * 🤖 Agente de monitorización para Linux
